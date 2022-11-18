@@ -4,7 +4,7 @@
 
 ## Abstract 
   
-Social media posts often reflect popular concepts in the world, which can represent themselves as hashtags or tags. Using the YouNiverse dataset, we will examine the characteristics of "trending" tags on YouTube, a platform where content creation is relatively more effortful. We want to examine the evolution of the use of trending tags and whether events in the world can influence the emergence and decline of tags. We also want to analyze if trending tags interact more with other tags with the help of graph networks. This analysis may also reveal cases of misuse. While some people use irrelevant trending hashtags to increase engagement for their posts, it causes a nuisance for other users who are looking for up-to-date information and news. Twitter is a platform facing this problem, with its rapid nature in spreading information. In this project, we investigate whether the YouTube community is facing the same issue.
+Social media posts often reflect popular concepts in the world, which can represent themselves as hashtags or tags. Using the [YouNiverse](https://zenodo.org/record/4650046#.Y3gE2nbMJPY) dataset, we will examine the characteristics of "trending" tags on YouTube, a platform where content creation is relatively more effortful. We want to examine the evolution of the use of trending tags and whether events in the world can influence the emergence and decline of tags. We also want to analyze if trending tags interact more with other tags with the help of graph networks. This analysis may also reveal cases of misuse. While some people use irrelevant trending hashtags to increase engagement for their posts, it causes a nuisance for other users who are looking for up-to-date information and news. Twitter is a platform facing this problem, with its rapid nature in spreading information. In this project, we investigate whether the YouTube community is facing the same issue.
 
 ## Research Question
 This project aims to investigate the following research questions:
@@ -17,10 +17,14 @@ This project aims to investigate the following research questions:
 
 ### Dataset
 #### Storage
+
 We use Google Drive and Google Colab Pro for our analysis since they allow easy collaboration. Given the large size of the dataset, it is unfeasible to read the whole data. To overcome this problem, we read the data in chunks and created separate datasets for each category and each timeframe. In this analysis, we consider monthly periods.
 
 #### Pre-processing
-Given we deal with textual data, our pre-processing related to tags is removing punctuations and changing letters to lowercase. We also create dictionaries for each timeframe-category pair containing tag pairs used together as keys and their frequency as values.
+
+Given we deal with textual data, our pre-processing related to tags is removing punctuations and changing letters to lowercase. There are videos without categories, and they are eliminated. Also if a video has no tags, naturally it is not included in the analysis. We also create dictionaries for each timeframe-category pair containing tag pairs used together as keys and their frequency as values.
+
+From the YouNiverse dataset, we use the [Video Metadata Dataset](https://github.com/epfl-dlab/YouNiverse#video-metadata). Only features we are interested are "categories", "upload_date" and "tags".  
 
 ### Tag Graph Analysis
 
@@ -65,13 +69,13 @@ As we analyzed popular tags using [word clouds](https://en.wikipedia.org/wiki/Ta
   </tr>
 </table>
  
-The images above show the emergence and disappearance of tags related to the Olympics during London 2012, as the size of tags such as "olympics" first increase and then decrease. [WordSwarm](https://github.com/thisIsMikeKane/WordSwarm) later updated by [PetrKorab](https://github.com/PetrKorab/Animated-Word-Cloud-in-Economics) is used for visualization, a video can be found on ["Olympics Case Study"]().
+The images above show the emergence and disappearance of tags related to the Olympics during London 2012, as the size of tags such as "olympics" first increase and then decrease. [WordSwarm](https://github.com/thisIsMikeKane/WordSwarm) later updated by [PetrKorab](https://github.com/PetrKorab/Animated-Word-Cloud-in-Economics) is used for visualization, [a video](https://drive.google.com/file/d/1-rYRuiiHMzSUtf9zgNV3TmrUluXinNv-/view?usp=share_link) can be found on ["Olympics Case Study"](https://github.com/epfl-ada/ada-2022-project-stuckoverflow/blob/main/Descriptive_Analysis.ipynb).
 
 #### Centrality Analysis
 
 "What characterizes an important vertex?"   
 To answer this question, we will use various [centrality measures](https://en.wikipedia.org/wiki/Centrality) to analyze the importance of trending tags. These measures give us an idea of how a tag interacts with others. We plan to use this notion especially to answer the question of misuse, assuming that increased centrality is related to usage with more tags, which may be irrelevant considering they were not interacting before popularity.  
-On ["Olympics Case Study"](), we observed centrality increases during the Olympic years.
+On ["Olympics Case Study"](https://github.com/epfl-ada/ada-2022-project-stuckoverflow/blob/main/Descriptive_Analysis.ipynb), we observed centrality increases during the Olympic years.
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/epfl-ada/ada-2022-project-stuckoverflow/main/figures/centrality.png">
@@ -81,7 +85,8 @@ On ["Olympics Case Study"](), we observed centrality increases during the Olympi
 
 We plan to visualize the graphs using one of the following libraries:
 - [Cosmograph](https://cosmograph.app/)
-- [sigma.js](https://www.sigmajs.org/)
+- [sigma.js](https://www.sigmajs.org/)  
+
 While both libraries can be used, sigma has the advantage of better search and node-specific visuals. However, Cosmograph can handle bigger graphs better. As we create networks, we will choose the better one for our use case.
 
 ## Proposed Timeline & Task Delivery Dates

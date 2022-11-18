@@ -18,6 +18,26 @@ The aim of this project is to investigate the following research questions:
 
 
 ## Methods
+
+### Dataset
+#### Storage
+We use Google Drive and Google Colab Pro for our analysis. While some categories can be handled without problem, others will be handled by reading chunk by chunk.
+
+#### Pre-processing
+Given we deal with tags, only initial pre-processing related to text is removing 
+
+### Tag Graph Analysis
+#### Tag Clustering
+#### Centrality Analysis
+#### 
+
+### Visualisation
+
+We plan to visualize the graph using one of the following libraries:
+- [Cosmograph](https://cosmograph.app/)
+- [sigma.js](https://www.sigmajs.org/)
+While both libraries can be used, sigma has the advantage of better search and node specific visuals. However Cosmograph has better handle on bigger graphs. As we create graphs, we will choose the better one for our use case.
+
 * Step 1: Data pre-processing
 * Step 2: Initial analysis / EDA
 Create a graph from tags, by connecting tags that were used together on a video.

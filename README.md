@@ -9,9 +9,10 @@ Twitter is known as a good source of news for its rapid nature in spreading info
 
 ## Research Question
 The aim of this project is to investigate the following research questions:
-* Do people often misuse video tags on unrelated video categories to exploit trending topics? We can narrow down by focusing on tags used in popular channels.
+
 * How do tags evolve and die? We can focus on one or few specific tags (that are relevant to our story) and study its trajectories. We can find out if a dying tag is replaced with a new term.
 * How do clusters of tags behave temporally? We can use word clouds in specific intervals and relate them to real-life events during that period of time.
+* Do people often misuse video tags on unrelated video categories to exploit trending topics? 
 
 ## Proposed additional datasets
 

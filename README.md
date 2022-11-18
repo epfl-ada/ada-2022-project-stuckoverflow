@@ -10,7 +10,7 @@ Social media posts often reflect popular concepts in the world, which can repres
 This project aims to investigate the following research questions:
 
 * How do tags evolve and die? When do they start to appear as popular tags, do these coincide with the emergence of real-life events? 
-* How do clusters of tags that are used together behave temporally? Do trending tags get more importance in these clusters during their popularity?
+* How do clusters of tags that are used together behave temporally? Do trending tags get more important in these clusters during their popularity?
 * Do people misuse video tags on unrelated video categories to exploit trending topics?   
 
 ## Methods

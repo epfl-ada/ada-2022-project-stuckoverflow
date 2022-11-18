@@ -10,7 +10,7 @@ Social media posts often reflect popular concepts in the world, which can repres
 This project aims to investigate the following research questions:
 
 * How do tags evolve and die? When do they start to appear as popular tags, do these coincide with the emergence of real-life events? 
-* How do clusters of tags that are used together behave temporally? Do trending tags get more important in these clusters during their popularity?
+* How do clusters of tags that are used together behave temporally? Do trending tags gain importance in these clusters during their popularity?
 * Do people misuse video tags on unrelated video categories to exploit trending topics?   
 
 ## Methods
@@ -18,7 +18,7 @@ This project aims to investigate the following research questions:
 ### Dataset
 #### Storage
 
-We use Google Drive and Google Colab Pro for our analysis since they allow easy collaboration. Given the large size of the dataset, it is unfeasible to read the whole data. To overcome this problem, we read the data in chunks and created separate datasets for each category and each timeframe. In this analysis, we consider monthly periods.
+We use Google Drive and Google Colab for our analysis since they allow easy collaboration. Given the large size of the dataset, it is unfeasible to read the whole data. To overcome this problem, we read the data in chunks and create separate datasets for each category and each timeframe. In this analysis, we consider monthly periods.
 
 #### Pre-processing
 

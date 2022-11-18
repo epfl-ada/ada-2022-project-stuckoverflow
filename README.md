@@ -24,7 +24,7 @@ We use Google Drive and Google Colab for our analysis since they allow easy coll
 
 Given we deal with textual data, our pre-processing related to tags is removing punctuations and changing letters to lowercase. There are videos without categories, and they are eliminated. Also if a video has no tags, naturally it is not included in the analysis. We also create dictionaries for each timeframe-category pair containing tag pairs used together as keys and their frequency as values.
 
-From the YouNiverse dataset, we use the [Video Metadata Dataset](https://github.com/epfl-dlab/YouNiverse#video-metadata). Only features we are interested are "categories", "upload_date" and "tags".  
+From the YouNiverse dataset, we use the [Video Metadata Dataset](https://github.com/epfl-dlab/YouNiverse#video-metadata). The only features we are interested in are "categories", "upload_date" and "tags".  
 
 ### Tag Graph Analysis
 
@@ -69,19 +69,19 @@ As we analyzed popular tags using [word clouds](https://en.wikipedia.org/wiki/Ta
   </tr>
 </table>
  
-The images above show the emergence and disappearance of tags related to the Olympics during London 2012, as the size of tags such as "olympics" first increase and then decrease. [WordSwarm tool](https://github.com/thisIsMikeKane/WordSwarm), which is later updated by [PetrKorab](https://github.com/PetrKorab/Animated-Word-Cloud-in-Economics) is used for visualization and the up-to-date code can be found on [our repository](https://github.com/epfl-ada/ada-2022-project-stuckoverflow/tree/main/WordSwarm). [The video](https://drive.google.com/file/d/1-rYRuiiHMzSUtf9zgNV3TmrUluXinNv-/view?usp=share_link) showing the whole evolution popular tags in the "Sports" category can be found on ["Olympics Case Study"](https://github.com/epfl-ada/ada-2022-project-stuckoverflow/blob/main/Descriptive_Analysis.ipynb).
+The images above show the emergence and disappearance of tags related to the Olympics during London 2012, as the size of tags such as "olympics" first increase and then decrease. [WordSwarm tool](https://github.com/thisIsMikeKane/WordSwarm), which is later updated by [PetrKorab](https://github.com/PetrKorab/Animated-Word-Cloud-in-Economics) is used for visualization and the up-to-date code can be found on [our repository](https://github.com/epfl-ada/ada-2022-project-stuckoverflow/tree/main/WordSwarm). [The video](https://drive.google.com/file/d/1-rYRuiiHMzSUtf9zgNV3TmrUluXinNv-/view?usp=share_link) showing the whole evolution of popular tags in the "Sports" category can be found in ["Olympics Case Study"](https://github.com/epfl-ada/ada-2022-project-stuckoverflow/blob/main/Descriptive_Analysis.ipynb).
 
 #### Centrality Analysis
 
 "What characterizes an important vertex?"   
 To answer this question, we will use various [centrality measures](https://en.wikipedia.org/wiki/Centrality) to analyze the importance of trending tags. These measures give us an idea of how a tag interacts with others. We plan to use this notion especially to answer the question of misuse, assuming that increased centrality is related to usage with more tags, which may be irrelevant considering they were not interacting before popularity.  
-On ["Olympics Case Study"](https://github.com/epfl-ada/ada-2022-project-stuckoverflow/blob/main/Descriptive_Analysis.ipynb), we observed centrality increases during the Olympic years.
+In ["Olympics Case Study"](https://github.com/epfl-ada/ada-2022-project-stuckoverflow/blob/main/Descriptive_Analysis.ipynb), we observed centrality increases during the Olympic years.
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/epfl-ada/ada-2022-project-stuckoverflow/main/figures/centrality.png">
 </p>
 
-### Visualisation
+### Visualization
 
 We plan to visualize the graphs using one of the following libraries:
 - [Cosmograph](https://cosmograph.app/)

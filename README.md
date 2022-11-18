@@ -69,7 +69,7 @@ As we analyzed popular tags using [word clouds](https://en.wikipedia.org/wiki/Ta
   </tr>
 </table>
  
-The images above show the emergence and disappearance of tags related to the Olympics during London 2012, as the size of tags such as "olympics" first increase and then decrease. [WordSwarm](https://github.com/thisIsMikeKane/WordSwarm) later updated by [PetrKorab](https://github.com/PetrKorab/Animated-Word-Cloud-in-Economics) is used for visualization, [a video](https://drive.google.com/file/d/1-rYRuiiHMzSUtf9zgNV3TmrUluXinNv-/view?usp=share_link) can be found on ["Olympics Case Study"](https://github.com/epfl-ada/ada-2022-project-stuckoverflow/blob/main/Descriptive_Analysis.ipynb).
+The images above show the emergence and disappearance of tags related to the Olympics during London 2012, as the size of tags such as "olympics" first increase and then decrease. [WordSwarm tool](https://github.com/thisIsMikeKane/WordSwarm), which is later updated by [PetrKorab](https://github.com/PetrKorab/Animated-Word-Cloud-in-Economics) is used for visualization and the up-to-date code can be found on [our repository](https://github.com/epfl-ada/ada-2022-project-stuckoverflow/tree/main/WordSwarm). [The video](https://drive.google.com/file/d/1-rYRuiiHMzSUtf9zgNV3TmrUluXinNv-/view?usp=share_link) showing the whole evolution popular tags in the "Sports" category can be found on ["Olympics Case Study"](https://github.com/epfl-ada/ada-2022-project-stuckoverflow/blob/main/Descriptive_Analysis.ipynb).
 
 #### Centrality Analysis
 

@@ -1,21 +1,17 @@
 # Tags on Trends
 
-## Abstract 
-The idea of the project is to understand the trajectories of tags: 
-* (1) how tags evolve over the years and 
-* (2) how events happening in the world can influence the appearance and decline of tags.  
+*StuckOverflow : Berkay Doner, Elif Sema Balcioglu, Iman Najwa Binti Masrun, Germain Vu*
 
-Twitter is known as a good source of news for its rapid nature in spreading information. While using viral hashtags under various post can increase tweet engagements, it causes a nuisance for other users who are looking for up-to-date news regarding critical events and disasters, like the #richardsonwildfire, or ongoing sports events such as the #olympicsgame, for instance. In this project, we would investigate if the YouTube community is facing the same issue in the context of tags misuse. Whenever a youtuber misuses a tag, other users can flag the video. The youtuber’s videos and channel can get shadowbanned if multiple flags are received. We can also use this information to determine if this is one of the factors where a famous channel experiences a rapid decline in their channel engagements due to tag misuse. 
+## Abstract 
+  
+Social media posts often reflect popular concepts in the world, which can represent themselves as hashtags or tags. Using the YouNiverse dataset, we will examine the characteristics of "trending" tags on YouTube, a platform where content creation is relatively more effortful. We want to examine the evolution of the use of trending tags and whether events in the world can influence the emergence and decline of tags. We also want to analyze if trending tags interact more with other tags with the help of graph networks. This analysis may also reveal cases of misuse. While some people use irrelevant trending hashtags to increase engagement for their posts, it causes a nuisance for other users who are looking for up-to-date information and news. Twitter is a platform facing this problem, with its rapid nature in spreading information. In this project, we investigate whether the YouTube community is facing the same issue.
 
 ## Research Question
 The aim of this project is to investigate the following research questions:
 
-* How do tags evolve and die? We can focus on one or few specific tags (that are relevant to our story) and study its trajectories. We can find out if a dying tag is replaced with a new term.
-* How do clusters of tags behave temporally? We can use word clouds in specific intervals and relate them to real-life events during that period of time.
-* Do people often misuse video tags on unrelated video categories to exploit trending topics? 
-
-## Proposed additional datasets
-
+* How do tags evolve and die? When do they start to appear as popular tags, do these coincide with emergence of real-life events? 
+* How do clusters of tags that are used together behave temporally? Do trending tags get more importance in these clusters during their popularity?
+* Do people misuse video tags on unrelated video categories to exploit trending topics?   
 
 ## Methods
 

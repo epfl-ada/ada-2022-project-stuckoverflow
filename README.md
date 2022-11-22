@@ -91,7 +91,7 @@ While both libraries can be used, sigma has the advantage of better search and n
 
 ## Proposed Timeline & Task Delivery Dates
 * 18/11/2022 - Deliver Milestone 2
-* 27/12/2022 - Implement Clustering on Tags
+* 27/11/2022 - Implement Clustering on Tags
 * 05/12/2022 - Perform Popularity and Centrality Analysis
 * 10/12/2022 - Create Graph Visualizations
 * 21/12/2022 - Data Story and Page Design

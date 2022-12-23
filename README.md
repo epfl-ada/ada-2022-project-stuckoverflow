@@ -4,11 +4,12 @@
 
 ## Abstract 
   
-Social media posts often reflect popular concepts in the world, which can represent themselves as hashtags or tags. Using the [YouNiverse](https://zenodo.org/record/4650046#.Y3gE2nbMJPY) dataset, we will examine the characteristics of "trending" tags on YouTube, a platform where content creation is relatively more effortful. We want to examine the evolution of the use of trending tags and whether events in the world can influence the emergence and decline of tags. We also want to analyze if trending tags interact more with other tags with the help of graph networks. This analysis may also reveal cases of misuse. While some people use irrelevant trending hashtags to increase engagement for their posts, it causes a nuisance for other users who are looking for up-to-date information and news. Twitter is a platform facing this problem (hashtag hijacking), due to its rapid nature in spreading information. In this project, we investigate whether the YouTube community is facing the same issue.
+Social media posts often reflect popular concepts in the world, which can represent themselves as hashtags or tags. Using the [YouNiverse](https://zenodo.org/record/4650046#.Y3gE2nbMJPY) dataset, we examine the characteristics of tags on YouTube, a platform where content creation is relatively more effortful. We examine the evolution of the use of trending tags and whether events in the world can influence the emergence of tags. We also analyze if trending tags interact more with other tags with the help of graph networks. While some people use irrelevant trending hashtags to increase engagement for their posts, it causes a nuisance for other users who are looking for up-to-date information and news. Twitter is a platform facing this problem (hashtag hijacking), due to its rapid nature in spreading information. In this project, our results also reveal cases of misuse and show that the YouTube community is facing the same issue.
 
 ## Research Question
 This project aims to investigate the following research questions:
 
+* How do users use the tags? Do people go to great lengths to include tags in their videos?
 * How do tags evolve and die? When do they start to appear as popular tags, do these coincide with the emergence of real-life events? 
 * How do clusters of tags that are used together behave temporally? Do trending tags gain importance in these clusters during their popularity?
 * Do people misuse video tags on unrelated video categories to exploit trending topics?   
@@ -24,70 +25,36 @@ We use Google Drive and Google Colab for our analysis since they allow easy coll
 
 Given we deal with textual data, our pre-processing related to tags is removing punctuations and changing letters to lowercase. There are videos without categories, and they are eliminated. Also if a video has no tags, naturally it is not included in the analysis. We also create dictionaries for each timeframe-category pair containing tag pairs used together as keys and their frequency as values.
 
-From the YouNiverse dataset, we use the [Video Metadata Dataset](https://github.com/epfl-dlab/YouNiverse#video-metadata). The only features we are interested in are "categories", "upload_date" and "tags".  
+From the YouNiverse dataset, we use the [Video Metadata Dataset](https://github.com/epfl-dlab/YouNiverse#video-metadata). The only features we are interested in are "categories", "upload_date", "tags" and "titles".  
 
-### Tag Graph Analysis
+### Tag Analysis
 
-Throughout our analysis, we will use an undirected graph network that consists of tags as nodes. We will increase the edge weight between nodes when they are used together in a video.  
-We will create a series of graphs for each category and period and analyze the evolution of the connections and emergence of nodes.
-
-#### Tag Clustering
-
-Since tags are entered by users, the use of natural language increases the complexity of the graph analysis as the options are endless for a topic and different people can come up with various similar tags. For example, while one user adds the tag "olympics", others may add "olympic games". Handling these separately increases the size of the graph extremely. To overcome this issue, we will cluster similar tags and use them as a single node. We plan to explore two options, 
-using pre-trained NLP networks such as BERT to calculate word embeddings whose similarities will be used for clustering 
-using co-occurring frequencies of tags to uncover clusters. 
-We will analyze the performance of these two approaches and decide on the best approach.
+We first analyze the usage of tags in a general sense. We examine the number of consecutive months a tag is used. We also also investigate some periodic tags such as "olympics" and "halloween". 
 
 #### Tag Popularity Analysis
 
-In alignment with our initial research question, we will analyze the usage of tags in terms of the number of videos containing the tag. The specific behavior will be analyzed to see the period a tag stays popular, and if this timeframe is related to the importance of the tag. 
+In alignment with our initial research question, we analyze the usage of tags in terms of the number of videos containing the tag. The specific behavior is analyzed to see the period a tag stays popular. We use a z-score based approach inspired by [this answer](https://stackoverflow.com/a/826509). We find several tags that correlate with real-life events such as "world cup", "geneva motor show". We also answer the question "How long does popularity last?". We visualize the number of months popular tags stay relevant in general and for each category.
 
-During our initial analysis, as a case study, we focused on the "Sports" category and "Olympics" as the trending topic. 
-As we analyzed popular tags using [word clouds](https://en.wikipedia.org/wiki/Tag_cloud) at each timeframe, we observed increased usage during Olympic times, which ended after a while. 
-
-
-<table width="100%">
-  <tr>
-    <th>June 2012</th>
-    <th>July 2012</th>
-    <th>August 2012</th>
-    <th>September 2012</th>
-  </tr>
-  <tr>
-  <td width="25%">
-      <img  src="https://raw.githubusercontent.com/epfl-ada/ada-2022-project-stuckoverflow/main/figures/june2012.png">
-   </td>
-  <td width="25%">
-      <img  src="https://raw.githubusercontent.com/epfl-ada/ada-2022-project-stuckoverflow/main/figures/july2012.png">
-   </td>
-    <td width="25%">
-      <img  src="https://raw.githubusercontent.com/epfl-ada/ada-2022-project-stuckoverflow/main/figures/august2012.png">
-   </td>
-    <td width="25%">
-      <img  src="https://raw.githubusercontent.com/epfl-ada/ada-2022-project-stuckoverflow/main/figures/september2012.png">
-   </td>
-  </tr>
-</table>
- 
-The images above show the emergence and disappearance of tags related to the Olympics during London 2012, as the size of tags such as "olympics" first increase and then decrease. [WordSwarm tool](https://github.com/thisIsMikeKane/WordSwarm), which is later updated by [PetrKorab](https://github.com/PetrKorab/Animated-Word-Cloud-in-Economics) is used for visualization and the up-to-date code can be found on [our repository](https://github.com/epfl-ada/ada-2022-project-stuckoverflow/tree/main/WordSwarm). [The video](https://drive.google.com/file/d/1-rYRuiiHMzSUtf9zgNV3TmrUluXinNv-/view?usp=share_link) showing the whole evolution of popular tags in the "Sports" category can be found in ["Olympics Case Study"](https://github.com/epfl-ada/ada-2022-project-stuckoverflow/blob/main/Descriptive_Analysis.ipynb).
+![Timeline](https://raw.githubusercontent.com/epfl-ada/ada-2022-project-stuckoverflow/main/figures/timeline.PNG)
 
 #### Centrality Analysis
 
-"What characterizes an important vertex?"   
-To answer this question, we will use various [centrality measures](https://en.wikipedia.org/wiki/Centrality) to analyze the importance of trending tags. These measures give us an idea of how a tag interacts with others. We plan to use this notion especially to answer the question of misuse, assuming that increased centrality is related to usage with more tags, which may be irrelevant considering they were not interacting before popularity.  
-In ["Olympics Case Study"](https://github.com/epfl-ada/ada-2022-project-stuckoverflow/blob/main/Descriptive_Analysis.ipynb), we observed centrality increases during the Olympic years.
+Tags that are used together in a video may also reveal some important insights. We use an undirected graph network that consists of tags as nodes. We increase the edge weight between nodes when they are used together in a video. We interpret the tag-video pairs as a bipartite graph, with tags on one side and videos on the other and use the projection with tags to construct the tag network for each month. We examine the "importance" of popular tags over time by using various [centrality measures](https://en.wikipedia.org/wiki/Centrality). Analysis shows that popular tags indeed gain some importance during their popularity.
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/epfl-ada/ada-2022-project-stuckoverflow/main/figures/centrality.png">
-</p>
+#### Misuse Analysis
 
-### Visualization
+We also focus on detecting videos with misuse. Given that misuse is related to the video content, we assume that the title represents the content of the video and therefore we take advantage of the titles of the videos in our analysis. The first thing that comes to mind may be to check the presence of the tag in the title, however, this would not take us further as videos with titles not containing the tag may still be relevant. To tackle this problem, we first find the most related tags with the tag, and use those as a hint of relevance.
+We take the following approach to find relevant tags:
 
-We plan to visualize the graphs using one of the following libraries:
-- [Cosmograph](https://cosmograph.app/)
-- [sigma.js](https://www.sigmajs.org/)  
+- Filter out the tags whose usage is less than 90% of the population. With this approach, we only get tags that are widely used.
+- For each tag, find the number of videos it is used. num_used
+- For each tag, find the number of videos it is used with the tag, num_used_tag.
+- Ratio = num_used_tag / num_used * 100
+- Take the tags with length > 2 and with ratio > 0.5
 
-While both libraries can be used, sigma has the advantage of better search and node-specific visuals. However, Cosmograph can handle bigger graphs better. As we create networks, we will choose the better one for our use case.
+These relevant tags are checked in video title, if title does not include any of these words but includes the tag, we mark it as possible misuse. To see the performance of this approach, we manually label a portion of this data for the tag "trump". Among all randomly selected 613 videos, 59.2% were labeled as misuse, 19.6% as Related and 21.2% as N/A. If we exclude N/A, 75.2% of the videos would fall under the category of misuse. Sports category for example has a misuse rate of 84.2%, which can be considered high. Our manual labeling can be found [here](https://docs.google.com/spreadsheets/d/1cK55fl4xL9sktpDxsKsMGiQ0cb6Nw_bDg4K7s_CbfGE/edit?usp=sharing).
+
+![Label](https://raw.githubusercontent.com/epfl-ada/ada-2022-project-stuckoverflow/main/figures/total_labeling.PNG)
 
 ## Proposed Timeline & Task Delivery Dates
 * 18/11/2022 - Deliver Milestone 2
@@ -99,6 +66,6 @@ While both libraries can be used, sigma has the advantage of better search and n
 
 ## Team Organisation 
 - Berkay Doner: Popularity analysis, page design
-- Elif Sema Balcioglu: Clustering, centrality analysis
+- Elif Sema Balcioglu: Misuse and centrality analysis, page design
 - Iman Najwa Binti Masrun: Data Story, page design
-- Germain Vu: Graph visualizations, data story
+- Germain Vu: Website maintanence, page design

@@ -68,4 +68,4 @@ These relevant tags are checked in video title, if title does not include any of
 - Berkay Doner: Popularity analysis, page design
 - Elif Sema Balcioglu: Misuse and centrality analysis, page design
 - Iman Najwa Binti Masrun: Data Story, page design
-- Germain Vu: Website maintanence, page design
+- Germain Vu: Website maintenance, page design

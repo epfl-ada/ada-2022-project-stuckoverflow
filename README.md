@@ -1,6 +1,9 @@
 # Tags on Trends
 
 *StuckOverflow : Berkay Doner, Elif Sema Balcioglu, Iman Najwa Binti Masrun, Germain Vu*
+[Data Story](https://germouche.github.io/stuckoverflow/)
+
+**Note:** The plots created with plotly cannot be visualized on Github. To see these plots you can check out [this Colab Notebook](https://colab.research.google.com/drive/1etvJn7VhPSU-udxqV9bkNbyXWbLqd3if?usp=sharing).
 
 ## Abstract 
   

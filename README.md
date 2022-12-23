@@ -1,6 +1,6 @@
 # Tags on Trends
 
-*StuckOverflow : Berkay Doner, Elif Sema Balcioglu, Iman Najwa Binti Masrun, Germain Vu*
+*StuckOverflow : Berkay Doner, Elif Sema Balcioglu, Iman Najwa Binti Masrun, Germain Vu*  
 [Data Story](https://germouche.github.io/stuckoverflow/)
 
 **Note:** The plots created with plotly cannot be visualized on Github. To see these plots you can check out [this Colab Notebook](https://colab.research.google.com/drive/1etvJn7VhPSU-udxqV9bkNbyXWbLqd3if?usp=sharing).
@@ -70,5 +70,5 @@ These relevant tags are checked in video title, if title does not include any of
 ## Team Organisation 
 - Berkay Doner: Popularity analysis, page design
 - Elif Sema Balcioglu: Misuse and centrality analysis, page design
-- Iman Najwa Binti Masrun: Data Story, page design
+- Iman Najwa Binti Masrun: Data story, page design
 - Germain Vu: Website maintenance, page design
